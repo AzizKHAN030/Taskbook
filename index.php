@@ -18,7 +18,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Proweb</a>
+    <a class="navbar-brand" href="/">TaskBook/Blog</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -49,8 +49,39 @@
             </div>
      </div>
 </nav>
+<?php if(!isset($_SESSION['login']) && !isset($_SESSION['admin'])): ?>
+    <div class="bg"></div>
+    <div class="instruction">
+        <h2>Демо пользователи:</h2>
+        <ul>
+            <li>Administrator:</li>
+            <li><span>Login:</span>admin</li>
+            <li><span>Password:</span>admin</li>
+            <p>Обладает правами добавлять новые записи, редактировать и удалять их.</p>
+        </ul>
+        <ul>
+            <li>User:</li>
+            <li><span>Login:</span>demo</li>
+            <li><span>Password:</span>demo</li>
+            <p>Может только просматривать записи</p>
+        </ul>
+        <p>При Регистрация нвого пользователя, права будут для обычного пользователя.</p>
+        <button>OK</button>
+    </div>
+    <script>
+        const modal = document.querySelector('.instruction');
+        const btn = modal.querySelector('button');
+        const bg = document.querySelector('.bg');
+        
+        btn.addEventListener('click',()=>{
+            if(modal && bg){
+                modal.style.top='-100%';
+                bg.style.display = 'none';
+            }
+        })
+    </script>
+<?php endif; ?>
 <?php if(isset($_SESSION['login']) || isset($_SESSION['admin'])): ?>
-   
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -97,36 +128,7 @@
             alert('Пароль или логин введен неправильно');
         </script>
         <?php endif; ?>
-        <div class="bg"></div>
-    <div class="instruction">
-        <h2>Демо пользователи:</h2>
-        <ul>
-            <li>Administrator:</li>
-            <li><span>Login:</span>admin</li>
-            <li><span>Password:</span>admin</li>
-            <p>Обладает правами добавлять новые записи, редактировать и удалять их.</p>
-        </ul>
-        <ul>
-            <li>User:</li>
-            <li><span>Login:</span>demo</li>
-            <li><span>Password:</span>demo</li>
-            <p>Может только просматривать записи</p>
-        </ul>
-        <p>При Регистрация нвого пользователя, права будут для обычного пользователя.</p>
-        <button>OK</button>
-    </div>
-    <script>
-        const modal = document.querySelector('.instruction');
-        const btn = modal.querySelector('button');
-        const bg = document.querySelector('.bg');
-        const navbar = document.querySelector('.navbar');
-        
-        btn.addEventListener('click',()=>{
-            modal.style.top='-100%';
-            bg.style.display = 'none';
-            navbar.style.display = 'flex';
-        })
-    </script>
+       
     <!-- js -->
     <script src="libs/jquery/jquery-3.3.1.min.js"></script>
     <script src="libs/bootstrap-4.0.0-dist/js/popper.min.js"></script>
