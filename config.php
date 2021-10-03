@@ -1,0 +1,1 @@
+<?php  $connect = new PDO('mysql: dbhost=localhost; dbname=notebook','root','root');

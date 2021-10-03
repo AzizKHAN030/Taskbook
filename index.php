@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $connect = new PDO('mysql: dbhost=localhost; dbname=php1930','root','root');
+    include 'config.php';
     $sql = "SELECT * FROM `news` WHERE id";
     $query = $connect->prepare($sql);
     $query->execute();

@@ -3,7 +3,7 @@
     $name = $_POST['name'];
     $email = $_POST['email'];
     $pass = $_POST['password'];
-    $connect = new PDO('mysql: dbhost=localhost; dbname=php1930','root','root');
+    include 'config.php';
     $sqlChek = "SELECT * FROM `users` WHERE 1";
     $queryCheck = $connect->prepare($sqlChek);
     $queryCheck->execute();

@@ -2,7 +2,7 @@
     session_start();
     $name = $_POST['name'];
     $pass = $_POST['password'];
-    $connect = new PDO('mysql: dbhost=localhost; dbname=php1930','root','root');
+    include 'config.php';
     $sql = "SELECT * FROM `users` WHERE name=:name AND pass=:pass";
     $query = $connect->prepare($sql);
     $query->execute([
