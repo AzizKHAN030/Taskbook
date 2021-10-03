@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    display: none;
+}
+.instruction{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background:#fff;
+    padding: 15px;
+    border-radius: 15px;
+    transition: .5s;
+}
+.instruction h2{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 15px;     
+}
+.instruction li{
+    list-style: none;
+}
+.instruction li:first-of-type{
+    font-weight: 600;
+    margin: 5px 0;
+    font-size: 20px;
+}
+.instruction span{
+    font-weight: 600;
+}
+.instruction ul{
+    margin-bottom: 20px;
+}
+.bg{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+.instruction button{
+    background:none;
+    border: none;
+    outline: none;
+    display: block;
+    cursor: pointer;
+    margin: 10px auto;
+    padding: 10px 25px;
+    border-radius: 5px;
+    background:rgb(63, 168, 63);
+}
+.instruction button:hover{
+    background:rgb(56, 156, 56);
+}
